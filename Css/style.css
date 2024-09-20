@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    font-family: 'Inclusive Sans', sans-serif;
+    background: linear-gradient(70deg, #6a6d86, #8b6ea0); /* Cambiado a un fondo azul oscuro y degradado */
+    overflow: hidden; /* Para evitar scroll al salir fuegos artificiales */
+}
+
+h1 {
+    text-align: center;
+    font-size: 100px;
+    color: rgb(231, 231, 231); /* Mejor contraste con el nuevo fondo */
+}
+
+.Con-2 {
+    display: none;
+}
+
+canvas {
+    display: block;
+}
+
+.Contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.Con {
+    display: flex;
+    place-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.Texto {
+    display: none;
+}
+
+.Texto h2 {
+    font-size: 50px;
+}
+
+#B12 {
+    margin-left: 30px;
+}
+
+.Button {
+    font-family: monospace;
+    font-size: x-large;
+    transition-duration: 0.2s;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgb(223, 82, 101);
+    color: black;
+    border: 2px solid rgb(211, 104, 104);
+    cursor: pointer;
+}
+
+.Button:hover {
+    transform: scale(1.1);
+    border-radius: 14px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    color: black;
+    background-color: rgb(203, 190, 190);
+}
+
+.Contenedor-Binicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    max-width: 600px;
+}
+
+.Con-Emergente {
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+}
+
+.cua {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 70%;
+    transform: translateX(-50%);
+    width: 300px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border: 2px solid rgb(141, 86, 86);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: aparecer 0.5s ease-out;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateX(-50%) translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@media (max-width: 468px) {
+    body {
+        background: linear-gradient(100deg, #000428, #004e92); /* Fondo responsive */
+    }
+}
+
+/* Fuegos artificiales */
+.firework {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    animation: firework-animation 1.5s ease-out forwards;
+}
+
+@keyframes firework-animation {
+    0% {
+        transform: translate(0, 0) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(calc(50vw - 5px), calc(50vh - 5px)) scale(3);
+        opacity: 0;
+    }
+}
+.audio-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;    /* Centra verticalmente, si es necesario */
+    position: fixed;        /* Fija el contenedor */
+    bottom: 0;             /* Coloca el contenedor en la parte inferior */
+    left: 50%;             /* Mueve el contenedor al centro */
+    transform: translateX(-50%); /* Ajusta la posición al centro */
+    width: 100%;           /* Ancho completo para mayor cobertura */
+    padding: 10px;        /* Espaciado alrededor, opcional */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente, opcional */
+}
+
